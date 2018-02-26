@@ -30,7 +30,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function add($a, $b)
+    public function add(string $a, string $b): string
     {
         return gmp_add($a, $b);
     }
@@ -43,7 +43,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function multiply($a, $b)
+    public function multiply(string $a, string $b): string
     {
         return gmp_mul($a, $b);
     }
@@ -56,7 +56,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function divide($a, $b)
+    public function divide(string $a, string $b): string
     {
         return gmp_div_q($a, $b);
     }
@@ -69,7 +69,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function mod($n, $d)
+    public function mod(string $n, string $d): string
     {
         return gmp_mod($n, $d);
     }
@@ -82,7 +82,7 @@ class Gmp implements MathInterface
      *
      * @return bool
      */
-    public function greaterThan($a, $b)
+    public function greaterThan(string $a, string $b): bool
     {
         return gmp_cmp($a, $b) > 0;
     }
@@ -94,7 +94,7 @@ class Gmp implements MathInterface
      *
      * @return int
      */
-    public function intval($a)
+    public function intval(string $a): int
     {
         return gmp_intval($a);
     }
@@ -106,7 +106,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function strval($a)
+    public function strval(string $a): string
     {
         return gmp_strval($a);
     }
@@ -118,7 +118,7 @@ class Gmp implements MathInterface
      *
      * @return string
      */
-    public function get($a)
+    public function get(int $a): string
     {
         return gmp_init($a);
     }

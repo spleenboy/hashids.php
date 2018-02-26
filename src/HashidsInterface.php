@@ -28,7 +28,7 @@ interface HashidsInterface
      *
      * @return string
      */
-    public function encode(...$numbers);
+    public function encode(...$numbers): string;
 
     /**
      * Decode a hash to the original parameter values.
@@ -37,7 +37,7 @@ interface HashidsInterface
      *
      * @return array
      */
-    public function decode($hash);
+    public function decode(string $hash): array;
 
     /**
      * Encode hexadecimal values and generate a hash string.
@@ -46,7 +46,7 @@ interface HashidsInterface
      *
      * @return string
      */
-    public function encodeHex($str);
+    public function encodeHex(string $str): string;
 
     /**
      * Decode a hexadecimal hash.
@@ -55,5 +55,5 @@ interface HashidsInterface
      *
      * @return string
      */
-    public function decodeHex($hash);
+    public function decodeHex(string $hash): string;
 }

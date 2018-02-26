@@ -160,7 +160,7 @@ class Hashids implements HashidsInterface
      *
      * @return string
      */
-    public function encode(...$numbers)
+    public function encode(...$numbers): string
     {
         $ret = '';
 
@@ -235,7 +235,7 @@ class Hashids implements HashidsInterface
      *
      * @return array
      */
-    public function decode($hash)
+    public function decode(string $hash): array
     {
         $ret = [];
 
@@ -286,7 +286,7 @@ class Hashids implements HashidsInterface
      *
      * @return string
      */
-    public function encodeHex($str)
+    public function encodeHex(string $str): string
     {
         if (!ctype_xdigit((string) $str)) {
             return '';
@@ -309,7 +309,7 @@ class Hashids implements HashidsInterface
      *
      * @return string
      */
-    public function decodeHex($hash)
+    public function decodeHex(string $hash): string
     {
         $ret = '';
         $numbers = $this->decode($hash);
@@ -329,7 +329,7 @@ class Hashids implements HashidsInterface
      *
      * @return string
      */
-    protected function shuffle($alphabet, $salt)
+    protected function shuffle(string $alphabet, string $salt): string
     {
         $key = $alphabet.' '.$salt;
 
@@ -366,7 +366,7 @@ class Hashids implements HashidsInterface
      *
      * @return string
      */
-    protected function hash($input, $alphabet)
+    protected function hash(string $input, string $alphabet): string
     {
         $hash = '';
         $alphabetLength = strlen($alphabet);
@@ -388,7 +388,7 @@ class Hashids implements HashidsInterface
      *
      * @return int
      */
-    protected function unhash($input, $alphabet)
+    protected function unhash(string $input, string $alphabet): int
     {
         $number = 0;
         $inputLength = strlen($input);
