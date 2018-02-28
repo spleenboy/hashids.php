@@ -116,9 +116,9 @@ class Bc implements MathInterface
      *
      * @param int $a
      *
-     * @return string
+     * @return integer
      */
-    public function get(int $a): string
+    public function get(int $a): integer
     {
         return $a;
     }
