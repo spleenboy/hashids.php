@@ -185,7 +185,7 @@ class Hashids implements HashidsInterface
         $numbersHashInt = 0;
 
         foreach ($numbers as $i => $number) {
-            $numbersHashInt += $this->math->intval($this->math->mod($number, ($i + 100)));
+            $numbersHashInt += $this->math->intval($this->math->mod((string) $number, ($i + 100)));
         }
 
         $lottery = $ret = $alphabet[$numbersHashInt % strlen($alphabet)];
@@ -386,9 +386,9 @@ class Hashids implements HashidsInterface
      * @param string $input
      * @param string $alphabet
      *
-     * @return int
+     * @return string
      */
-    protected function unhash(string $input, string $alphabet): int
+    protected function unhash(string $input, string $alphabet): string
     {
         $number = '0';
         $inputLength = strlen($input);
