@@ -95,7 +95,7 @@ interface MathInterface
      *
      * @param int $a
      *
-     * @return string
+     * @return int
      */
-    public function get(int $a): string;
+    public function get(int $a): int;
 }

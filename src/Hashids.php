@@ -390,7 +390,7 @@ class Hashids implements HashidsInterface
      */
     protected function unhash(string $input, string $alphabet): int
     {
-        $number = 0;
+        $number = '0';
         $inputLength = strlen($input);
 
         if ($inputLength && $alphabet) {
